@@ -1,0 +1,263 @@
+:root {
+  --ms-red: #f25022;
+  --ms-green: #7fba00;
+  --ms-blue: #00a4ef;
+  --ms-yellow: #ffb900;
+  --ms-gray: #737373;
+  --ink: #1d232a;
+  --paper: #ffffff;
+  --cloud: #eef5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(140deg, #fefcf8 0%, #eff8ff 42%, #fff7e8 100%);
+  min-height: 100vh;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(242, 80, 34, 0.15), transparent 28%),
+    radial-gradient(circle at 84% 28%, rgba(0, 164, 239, 0.2), transparent 32%),
+    radial-gradient(circle at 70% 84%, rgba(127, 186, 0, 0.16), transparent 30%);
+  pointer-events: none;
+}
+
+.container {
+  width: min(980px, 94vw);
+  margin: 2rem auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(115, 115, 115, 0.16);
+  border-radius: 16px;
+  padding: 1.2rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 28px rgba(29, 35, 42, 0.06);
+}
+
+.hero {
+  overflow: hidden;
+}
+
+.hero-stripes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+}
+
+.stripe {
+  height: 5px;
+  border-radius: 999px;
+}
+
+.stripe-red {
+  background: var(--ms-red);
+}
+
+.stripe-green {
+  background: var(--ms-green);
+}
+
+.stripe-blue {
+  background: var(--ms-blue);
+}
+
+.stripe-yellow {
+  background: var(--ms-yellow);
+}
+
+.hero h1 {
+  margin: 0.2rem 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--ms-blue);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+.subtitle {
+  margin: 0.4rem 0 0;
+  color: #3d4b59;
+}
+
+h2 {
+  margin-top: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.section-search {
+  border-top: 4px solid var(--ms-blue);
+}
+
+.section-market {
+  border-top: 4px solid var(--ms-green);
+}
+
+.section-qa {
+  border-top: 4px solid var(--ms-red);
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.68rem 0.78rem;
+  border-radius: 10px;
+  border: 1px solid rgba(115, 115, 115, 0.35);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(0, 164, 239, 0.8);
+  box-shadow: 0 0 0 3px rgba(0, 164, 239, 0.18);
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.68rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--ms-blue), #0e8ed7);
+  color: #fff;
+}
+
+.btn-accent {
+  background: linear-gradient(120deg, var(--ms-green), #68a100);
+  color: #fff;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+  color: #2d3b48;
+}
+
+.company-meta {
+  margin: 0.5rem 0 1rem;
+  color: #33414f;
+  line-height: 1.5;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.kpi {
+  background: linear-gradient(160deg, #ffffff, var(--cloud));
+  border: 1px solid rgba(115, 115, 115, 0.2);
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+.kpi-blue {
+  box-shadow: inset 0 3px 0 rgba(0, 164, 239, 0.85);
+}
+
+.kpi-green {
+  box-shadow: inset 0 3px 0 rgba(127, 186, 0, 0.9);
+}
+
+.kpi-yellow {
+  box-shadow: inset 0 3px 0 rgba(255, 185, 0, 0.95);
+}
+
+.kpi p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--ms-gray);
+}
+
+.kpi strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.chart-wrap {
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 185, 0, 0.45);
+  padding: 0.5rem 0.5rem 0.2rem;
+}
+
+.qa-answer {
+  margin-top: 0.9rem;
+  background: #fff;
+  border-left: 4px solid var(--ms-red);
+  border-radius: 8px;
+  padding: 0.8rem;
+  white-space: pre-wrap;
+}
+
+.qa-sources {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.qa-sources a {
+  color: var(--ms-blue);
+  word-break: break-all;
+}
+
+#status {
+  margin: 0.1rem;
+  color: #27333f;
+  min-height: 1.2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .container {
+    margin: 1rem auto 1.6rem;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}

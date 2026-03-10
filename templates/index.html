@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Price Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" defer></script>
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <main class="container">
+      <header class="hero card">
+        <p class="eyebrow">Python-First AI Agent</p>
+        <h1>Stock Insight Studio</h1>
+        <p class="subtitle">
+          Search a company, confirm your ticker, then explore live pricing, growth metrics, and grounded Q&A.
+        </p>
+        <div class="hero-stripes" aria-hidden="true">
+          <span class="stripe stripe-red"></span>
+          <span class="stripe stripe-green"></span>
+          <span class="stripe stripe-blue"></span>
+          <span class="stripe stripe-yellow"></span>
+        </div>
+      </header>
+
+      <section class="card section-search" id="search-card">
+        <h2>1) Find Company</h2>
+        <form id="prepare-form" class="row">
+          <input id="query-input" type="text" placeholder="Example: Microsoft" required />
+          <button type="submit" class="btn-primary">Search</button>
+        </form>
+        <div id="candidate-wrap" class="hidden">
+          <p class="label">Select the best ticker and confirm:</p>
+          <div class="row">
+            <select id="ticker-select"></select>
+            <button id="confirm-btn" class="btn-accent" type="button">Proceed</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section-market hidden" id="result-card">
+        <h2>2) Market Snapshot</h2>
+        <div class="company-meta" id="company-meta"></div>
+        <div class="kpi-grid">
+          <div class="kpi kpi-blue">
+            <p>Current Price</p>
+            <strong id="kpi-price">-</strong>
+          </div>
+          <div class="kpi kpi-green">
+            <p>1M Growth</p>
+            <strong id="kpi-month">-</strong>
+          </div>
+          <div class="kpi kpi-yellow">
+            <p>1Y Growth</p>
+            <strong id="kpi-year">-</strong>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="price-chart" aria-label="Stock price chart"></canvas>
+        </div>
+      </section>
+
+      <section class="card section-qa hidden" id="qa-card">
+        <h2>3) Ask About This Company</h2>
+        <form id="qa-form" class="row">
+          <input id="question-input" type="text" placeholder="Example: What is this company's core business?" required />
+          <button class="btn-primary" type="submit">Ask</button>
+        </form>
+        <article id="qa-answer" class="qa-answer"></article>
+        <ul id="qa-sources" class="qa-sources"></ul>
+      </section>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+  </body>
+</html>
