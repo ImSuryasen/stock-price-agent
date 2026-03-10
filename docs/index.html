@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Price Agent</title>
+    <style>
+      :root {
+        --red: #f25022;
+        --green: #7fba00;
+        --blue: #00a4ef;
+        --yellow: #ffb900;
+        --gray: #737373;
+      }
+      body {
+        margin: 0;
+        font-family: Segoe UI, Arial, sans-serif;
+        background: linear-gradient(135deg, #f7fbff, #fff8ef);
+        color: #1f2933;
+      }
+      .wrap {
+        max-width: 860px;
+        margin: 3rem auto;
+        padding: 1.2rem;
+      }
+      .card {
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid #d8e0e8;
+        padding: 1.2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+      h1 {
+        margin-top: 0;
+      }
+      .bars {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.4rem;
+        margin: 1rem 0;
+      }
+      .bars span {
+        height: 6px;
+        border-radius: 999px;
+      }
+      .r { background: var(--red); }
+      .g { background: var(--green); }
+      .b { background: var(--blue); }
+      .y { background: var(--yellow); }
+      a { color: var(--blue); font-weight: 600; }
+      code { background: #f3f7fb; padding: 0.12rem 0.32rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <h1>Stock Price Agent</h1>
+        <div class="bars"><span class="r"></span><span class="g"></span><span class="b"></span><span class="y"></span></div>
+        <p>This repository contains a Flask-based stock agent app with live pricing, growth metrics, charting, and grounded Q&A.</p>
+        <p>GitHub Pages hosts static content only, so the full Flask backend cannot run here.</p>
+        <p>Run the complete app locally:</p>
+        <p><code>python -m venv .venv</code><br /><code>pip install -r requirements.txt</code><br /><code>python app.py</code></p>
+        <p>Repository: <a href="https://github.com/ImSuryasen/stock-price-agent">github.com/ImSuryasen/stock-price-agent</a></p>
+      </div>
+    </div>
+  </body>
+</html>
